@@ -12,3 +12,6 @@ freeze:
 
 test:
 	python manage.py test
+
+make su:
+	python manage.py createsuperuser ${NAME}

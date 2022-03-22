@@ -3,6 +3,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from app.models import Job
 from app.permissions import IsAdmin
@@ -16,6 +17,8 @@ def index(request):
 
 
 class JobsList(APIView):
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
     def get(self, request):
         jobs = Job.objects.all()
         serializers = JobsSerializer(jobs, many=True)
