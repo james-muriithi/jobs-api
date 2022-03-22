@@ -25,8 +25,7 @@ class JobsList(APIView):
     def post(self, request):
         serializers = JobsSerializer(data=request.data)
         if serializers.is_valid():
-            job = serializers.save(commit=False)
-            job.save_post()
+            job = serializers.save()
             return Response(serializers.data, status=HTTP_201_CREATED)
         return Response(serializers.errors, status=HTTP_400_BAD_REQUEST)
 

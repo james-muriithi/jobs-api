@@ -13,4 +13,5 @@ class JobsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Job
         fields = '__all__'
+        # optional_fields = ['summary',]
         read_only_fields = ['created_at', 'id']
