@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'news.urls'
+ROOT_URLCONF = 'jobs.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'news.wsgi.application'
+WSGI_APPLICATION = 'jobs.wsgi.application'
 
 
 # Database
