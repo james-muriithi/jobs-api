@@ -4,13 +4,13 @@ from django.utils.text import slugify
 
 
 class Job(models.Model):
-    title = models.CharField(max_length=150)
+    title = models.CharField(max_length=250)
     slug = models.SlugField(null=True, blank=True)
     location = models.CharField(max_length=150, null=True, blank=True)
     company = models.CharField(max_length=150, null=True, blank=True)
     job_type = models.CharField(max_length=150, null=True, blank=True)
     salary = models.CharField(max_length=150, null=True, blank=True)
-    link = models.CharField(max_length=150, unique=True)
+    link = models.CharField(max_length=250, unique=True)
     post_date = models.CharField(max_length=150, null=True, blank=True)
     summary = models.TextField(null=True, blank=True)
     full_text = models.TextField(null=True, blank=True)
